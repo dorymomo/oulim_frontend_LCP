@@ -1,0 +1,8 @@
+.div-title{
+  display: flex;
+  align-content: flex-start;
+}
+
+.p-community-post{
+  display: flex;
+}
