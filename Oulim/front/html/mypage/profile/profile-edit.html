@@ -17,22 +17,14 @@
 
   <link rel="stylesheet" href="/Oulim/asset/css/pages/mypage/profile/profile-edit.css">
 
-  <script defer>
-    fetch('/Oulim/header-login.html')
-      .then(r => r.text())
-      .then(t => document.getElementById('header').innerHTML = t)
-
-    fetch('/Oulim/footer.html')
-      .then(r => r.text())
-      .then(t => document.getElementById('footer').innerHTML = t)
-  </script>
+  <script defer src="/Oulim/asset/js/pages/main/include.js"></script>
 
   <script defer src="/Oulim/asset/js/pages/mypage/profile/profile-edit.js"></script>
 </head>
 
 <body>
 
-  <div id="header"></div>`
+  <div id="header"></div>
 
   <main class="l-main">
 
@@ -48,31 +40,45 @@
             <ul class="list1">
               <li>나의 정보</li>
               <br>
-              <li>- 내 정보 보기</li>
+              <a href="/Oulim/front/html/mypage/profile/profile.html">
+                <li>- 내 정보 보기</li>
+              </a>
               <br>
-              <li>- 내 정보 수정</li>
+              <a href="/Oulim/front/html/mypage/profile/profile-edit.html">
+                <li>- 내 정보 수정</li>
+              </a>
               <br>
             </ul>
 
             <ul class="list2">
               <li>봉사조회</li>
               <br>
-              <li>- 예정된 봉사 이력 조회</li>
+              <a href="/Oulim/front/html/mypage/volunteer-history/coming-volunteer.html">
+                <li>- 예정된 봉사 이력 조회</li>
+              </a>
               <br>
-              <li>- 완료된 봉사 이력 조회</li>
+              <a href="/Oulim/front/html/mypage/volunteer-history/finish-volunteer.html">
+                <li>- 완료된 봉사 이력 조회</li>
+              </a>
 
             </ul>
 
             <ul class="list3">
-              <li>포인트 조회</li>
+              <a href="/Oulim/front/html/mypage/point-history/point-history.html">
+                <li>포인트 조회</li>
+              </a>
             </ul>
 
             <ul class="list4">
-              <li>작성글 조회</li>
+              <a href="/Oulim/front/html/mypage/community-history/myposts.html">
+                <li>작성글 조회</li>
+              </a>
             </ul>
 
             <ul class="list5">
-              <li>회원 탈퇴</li>
+              <a href="/Oulim/front/html/mypage/quit/quit.html">
+                <li>회원 탈퇴</li>
+              </a>
             </ul>
 
           </div>
@@ -91,23 +97,80 @@
 
           <div class="main-pw">
 
-            <h5>닉네임 수정</h5>
-            <div class="pw-text">
-              <input id="nickname" type="text" class="c-input" name="nickname" placeholder="기존 닉네임">
-              <button type="button" class="c-button c-button--primary c-button--md">중복확인</button>
+            <div class="i-nickname">
+
+              <h5>닉네임</h5>
+              <div class="pw-text">
+                <input id="nickname" type="text" class="c-input" name="nickname" placeholder="닉네임">
+                <button type="button" class="c-button c-button--primary c-button--md">중복확인</button>
+              </div>
             </div>
 
-            <h5>이메일 수정</h5>
-            <div class="pw-text">
-              <input id="email" type="text" class="c-input" name="email" placeholder="기존 이메일">
-              <button class="c-button c-button--primary c-button--md">중복확인</button>
+            <p>
+            <div class="c-form-field is-error">
+
+              <label class="c-form-field__label">
+                <h5>닉네임</h5>
+              </label>
+              <div class="pw-text">
+                <input type="text" class="c-input" placeholder="닉네임">
+                <button type="button" class="c-button c-button--primary c-button--md">중복확인</button>
+              </div>
+              <span class="c-form-field__error">
+                존재하는 닉네임입니다.
+              </span>
+
             </div>
+            </p>
+
+            <div class="i-email">
+
+              <h5>이메일</h5>
+              <div class="pw-text">
+                <input id="email" type="text" class="c-input" name="email" placeholder="이메일">
+                <button type="button" class="c-button c-button--primary c-button--md">중복확인</button>
+              </div>
+            </div>
+
+            <p>
+            <div class="c-form-field is-error">
+
+              <label class="c-form-field__label">
+                <h5>이메일</h5>
+              </label>
+              <div class="pw-text">
+                <input type="text" class="c-input" placeholder="이메일">
+                <button type="button" class="c-button c-button--primary c-button--md">중복확인</button>
+              </div>
+              <span class="c-form-field__error">
+                존재하는 이메일입니다.
+              </span>
+
+            </div>
+            </p>
 
             <h5>인증번호</h5>
             <div class="pw-text">
-              <input id="verify" type="text" class="c-input" name="verify" placeholder="인증번호 입력">
+              <input id="verify" type="text" class="c-input" name="verify" placeholder="이메일 인증번호 입력">
               <button class="c-button c-button--primary c-button--md">인증확인</button>
             </div>
+
+            <p>
+            <div class="c-form-field is-error">
+
+              <label class="c-form-field__label">
+                <h5>인증번호</h5>
+              </label>
+              <div class="pw-text">
+                <input type="email" class="c-input" placeholder="이메일 인증번호 입력">
+                <button type="button" class="c-button c-button--primary c-button--md">중복확인</button>
+              </div>
+              <span class="c-form-field__error">
+                인증번호가 일치하지 않습니다.
+              </span>
+
+            </div>
+            </p>
 
             <h5>비밀번호 수정</h5>
             <div class="pw-text">
